@@ -82,7 +82,7 @@ export const listNetworkRequests = defineTool({
       ),
   },
   handler: async (request, response, context) => {
-    if (request.params.reqid !== undefined) {
+    if (request.params.reqid !== undefined && request.params.reqid > 0) {
       response.attachNetworkRequest(request.params.reqid);
       return;
     }
